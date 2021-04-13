@@ -47,6 +47,11 @@ p {
   line-height: 1.6;
 }
 
+a:focus,
+a:hover {
+  opacity: .75;
+}
+
 /* layout containers */
 
 .container {
@@ -212,7 +217,7 @@ p {
 
 .banner-3__img {
   width: 100%;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 /* sidebar layout */
@@ -274,6 +279,11 @@ p {
 @media (min-width: 700px) {
   h1 {
     font-size: 52.5px;
+  }
+
+  p,
+  a {
+    font-size: 16px;
   }
 
   .row {
