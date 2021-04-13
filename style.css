@@ -8,7 +8,13 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #2E323F;
+  padding: 2em 0;
 }
 
 h1 {
@@ -22,14 +28,12 @@ h2 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  margin-top: 0;
 }
 
 h3 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 28px;
-  margin-top: 0;
 }
 
 h4 {
@@ -40,6 +44,7 @@ h4 {
 
 p {
   margin-bottom: 0;
+  line-height: 1.6;
 }
 
 /* layout containers */
@@ -48,6 +53,111 @@ p {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
+}
+
+/* nav layout */
+.logo {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav {
+  visibility: hidden;
+  position: absolute;
+}
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list--primary {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.nav__list--primary,
+.nav__list--secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__item {
+  margin-top: .75em;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav__link--button {
+  display: inline-block;
+  background-color: #fff;
+  color: #2E323F;
+  padding: .25em .75em;
+  border-radius: 100px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0;
+  border-radius: 50%;
+  background: #3B4050;
+  transition: opacity 250ms ease;
+
+  position: absolute;
+  right: 6%;
+  top: 2.9%;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: .75;
+}
+
+.burger {
+  width: 50%;
+  position: relative;
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  display: block;
+  background: #fff;
+  height: 3px;
+  margin: 0 auto;
+}
+
+.burger::before,
+.burger::after {
+  content: '';
+  width: 100%;
+}
+
+.burger::before {
+  transform: translateY(-6px);
+}
+
+.burger::after {
+  transform: translateY(3px);
 }
 
 /* banner 1 layout */
@@ -63,7 +173,6 @@ p {
 
 .banner-1__info {
   color: white;
-  padding-bottom: 1em;
 }
 
 .banner-1__btn {
@@ -71,7 +180,7 @@ p {
   color: white;
   background-color: #A59678;
   border-radius: 100px;
-  margin-top: 1em;
+  margin-top: 1.5em;
   padding: .75em 1.25em;
   text-transform: uppercase;
   text-decoration: none;
@@ -87,7 +196,7 @@ p {
 /* banner 2 layout */
 
 .banner-2 {
-  background-color: #D8D4D4;
+  background-color: #EEEDED;
   padding: 2em 0;
 }
 
@@ -102,7 +211,8 @@ p {
 }
 
 .banner-3__img {
-  max-width: 100%
+  width: 100%;
+  max-width: 100%;
 }
 
 /* sidebar layout */
@@ -115,6 +225,10 @@ p {
 
 .sidebar__text {
   color: white;
+}
+
+.sidebar__title {
+  margin-top: 0;
 }
 
 /* footer */
@@ -144,8 +258,257 @@ p {
 .footer__link {
   color: white;
   text-decoration: none;
+  transition: opacity 1s;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+  opacity: .6;
+  transition: opacity 1s;
 }
 
 .footer__item + .footer__item {
   margin-top: 1em;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 52.5px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .col + .col {
+    margin-left: 1.5em;
+  }
+
+  /* nav layout */
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .nav__list--primary {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .nav__list--primary,
+  .nav__list--secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav__item {
+    margin: 0 0 0 1.5em;
+  }
+
+  /* banner 1 layout */
+  .banner-1 {
+    min-height: 300px;
+    align-items: center;
+    padding: 2em 1em;
+  }
+
+  .banner-1__text {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* .banner-1__title {
+    width: 40%;
+  }
+
+  .banner-1__info {
+    width: 40%;
+  } */
+
+  /* banner 2 layout */
+  .banner-2__title {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .banner-2__text {
+    text-align: center;
+  }
+
+  /* banner 3 layout */
+  .banner-3__title {
+    margin-top: 0;
+  }
+
+  .banner-3__img {
+    margin-top: 1em;
+  }
+
+  /* sidebar layout */
+  .sidebar__box {
+    padding: 1em;
+    margin-top: 2em;
+  }
+
+  .sidebar__text {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .sidebar__title {
+    font-size: 20px;
+  }
+
+  /* footer layout */
+  .footer__title {
+    margin-top: 0;
+    text-align: center;
+    font-size: 34px;
+  }
+
+  .footer__company-info {
+    width: 60%;
+  }
+
+  .footer__subtitle {
+    font-size: 20px;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 65px;
+    margin-bottom: 0;
+  }
+
+  .col + .col {
+    margin-left: 1.75em;
+  }
+
+  /* nav layout */
+
+
+  .nav__list--primary,
+  .nav__list--secondary {
+    justify-content: space-between;
+  }
+
+  /* banner 1 layout */
+  .banner-1 {
+    min-height: 400px;
+    align-items: center;
+    padding: 4em 3em;
+  }
+
+  .banner-1__text {
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+
+  .banner-1__info {
+    font-size: 24px;
+    align-self: flex-end;
+  }
+
+  /* banner 2 layout */
+  .banner-2 {
+    padding: 8em 0;
+  }
+
+  .banner-2__text {
+    font-size: 18px;
+  }
+
+  .banner-2__title {
+    font-size: 30px;
+  }
+
+  /* banner 3 layout */
+  .banner-3 {
+    padding: 8em 0;
+  }
+
+  .banner-3__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .banner-3__text {
+    font-size: 21px;
+    width: 60%;
+  }
+
+  .banner-3__title {
+    font-size: 36px;
+  }
+
+  .banner-3__img {
+    margin: 1em 0;
+  }
+
+  /* sidebar layout */
+  .sidebar {
+    display: block;
+    width: 30%;
+  }
+
+  .sidebar__box {
+    margin-top: 0;
+  }
+
+  .sidebar__box + .sidebar__box {
+    margin-left: 0em;
+  }
+
+  .sidebar__text {
+    font-size: 18px;
+  }
+
+  .sidebar__title {
+    font-size: 30px;
+  }
+
+  /* footer layout */
+  .footer-banner {
+    padding: 8em 0;
+  }
+
+  .footer__title {
+    font-size: 60px;
+  }
+
+  .footer__nav-container {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .footer__company-info {
+    width: 30%;
+  }
+
+  .footer__subtitle {
+    font-size: 21px;
+  }
 }

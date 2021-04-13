@@ -9,16 +9,37 @@
   </head>
 
   <body>
-    <header class="header">
+    <header>
+      <div class="container row">
+        <button class="nav-toggle" aria-label="open navigation">
+          <span class="burger"></span>
+        </button>
 
+        <a class="logo" href="#">
+          My Project
+        </a>
+
+        <nav class="nav">
+          <ul class="nav__list nav__list--primary">
+              <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          </ul>
+
+          <ul class="nav__list nav__list--secondary">
+              <li class="nav__item"><a href="#" class="nav__link">Sign In</a></li>
+              <li class="nav__item"><a href="#" class="nav__link nav__link--button">Sign up</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="banner-1">
-        <div class="container row">
-          <div class="banner-1__text">
-            <h1 class="banner-1__title">Responsive layouts don’t have to be a struggle</h1>
-            <div class="banner-1__info">
+      <section class="banner-1 row">
+        <div class="container">
+          <div class="banner-1__text row">
+            <h1 class="banner-1__title col">Responsive layouts don’t have to be a struggle</h1>
+            <div class="banner-1__info col">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. </p>
               <a href="#" class="banner-1__btn">I want to learn</a>
@@ -47,15 +68,16 @@
             <h3 class="banner-2__title">Done Right</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.</p>
+              enim ad minim veniam.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="banner-3">
-        <div class="container row">
+        <div class="container banner-3__row">
           <div class="banner-3__text col">
-            <h2>It doesn't have to be so hard</h2>
+            <h2 class="banner-3__title">It doesn't have to be so hard</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur
@@ -69,10 +91,10 @@
               dolore magna aliqua. Ut enim ad minim veniam.</p>
           </div>
 
-          <article class="sidebar col">
-            <div class="sidebar__box">
+          <article class="sidebar row">
+            <div class="sidebar__box col">
               <div class="sidebar__text">
-                <h3>Break it down</h3>
+                <h3 class="sidebar__title">Break it down</h3>
                 <p>Lorem ipsum dolor sit amet,
                   consectetur adipiscing elit, sed do
                   eiusmod tempor incididunt ut
@@ -80,9 +102,9 @@
               </div>
             </div>
 
-            <div class="sidebar__box">
+            <div class="sidebar__box col">
               <div class="sidebar__text">
-                <h3>Work your way up</h3>
+                <h3 class="sidebar__title">Work your way up</h3>
                 <p>Lorem ipsum dolor sit amet,
                   consectetur adipiscing elit, sed do
                   eiusmod tempor incididunt ut
@@ -90,9 +112,9 @@
               </div>
             </div>
 
-            <div class="sidebar__box">
+            <div class="sidebar__box col">
               <div class="sidebar__text">
-                <h3>Polish</h3>
+                <h3 class="sidebar__title">Polish</h3>
                 <p>Lorem ipsum dolor sit amet,
                   consectetur adipiscing elit, sed do
                   eiusmod tempor incididunt ut
@@ -107,8 +129,8 @@
     <footer class="footer-banner">
       <div class="container">
         <h2 class="footer__title">Just scratching the surface</h2>
-        <div class="row">
-          <div class="footer__company-info">
+        <div class="footer__nav-container row">
+          <div class="footer__company-info col">
             <h4 class="footer__subtitle">About our company</h4>
             <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -147,5 +169,6 @@
       </div>
     </footer>
 
+    <script src="script.js"></script>
   </body>
 </html>
