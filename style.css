@@ -337,14 +337,6 @@ p {
     justify-content: center;
   }
 
-  /* .banner-1__title {
-    width: 40%;
-  }
-
-  .banner-1__info {
-    width: 40%;
-  } */
-
   /* banner 2 layout */
   .banner-2__title {
     margin-top: 0;
@@ -429,7 +421,6 @@ p {
 
   .banner-1__info {
     font-size: 24px;
-    align-self: flex-end;
   }
 
   /* banner 2 layout */
